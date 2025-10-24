@@ -1,0 +1,22 @@
+{
+  "name": "Lovy_eWidget",
+  "version": "0.1.6",
+  "keywords": "Arduino, tft, display, button, gui, graph, meter, slider",
+  "description": "A LovyanGFX GUI widget library",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/NoRi-230401/Lovy_eWidget"
+  },
+  "authors":
+  [
+    {
+        "name": "NoRi-230401",
+        "email": "",
+        "maintainer": true
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "*",
+  "headers": "Lovy_eWidget.h"
+}
