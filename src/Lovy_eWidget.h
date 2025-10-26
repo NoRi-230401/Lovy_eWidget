@@ -20,6 +20,11 @@
 
 #include <LovyanGFX.hpp>
 
+#include "widgets/button/ButtonWidget.h"
+#include "widgets/slider/SliderWidget.h"
 #include "widgets/meter/Meter.h"
+#include "widgets/graph/GraphWidget.h"
+#include "widgets/graph/TraceWidget.h"
+
 
 #endif

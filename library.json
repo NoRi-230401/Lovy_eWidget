@@ -1,6 +1,6 @@
 {
   "name": "Lovy_eWidget",
-  "version": "0.1.6",
+  "version": "0.0.6",
   "keywords": "Arduino, tft, display, button, gui, graph, meter, slider",
   "description": "A LovyanGFX GUI widget library",
   "repository":
