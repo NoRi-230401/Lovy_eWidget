@@ -5,26 +5,27 @@
 // Requires widget library here:
 // https://github.com/Bodmer/TFT_eWidget
 
-#include <TFT_eSPI.h>
-TFT_eSPI tft = TFT_eSPI();
+// #define LGFX_AUTODETECT
+#include <LovyanGFX.hpp>
+#include "LovyanGFX_ILI9341_XPT2046_Config.hpp"
+static LGFX lcd;
+static LGFX_Sprite sprite(&lcd);
 
-#include <TFT_eWidget.h>               // Widget library
-
-GraphWidget gr = GraphWidget(&tft);    // Graph widget
-
+#include <Lovy_eWidget.h>
+GraphWidget gr = GraphWidget(&sprite);    // Graph widget
 // Traces are drawn on tft using graph instance
-TraceWidget tr1 = TraceWidget(&gr);    // Graph trace 1
-TraceWidget tr2 = TraceWidget(&gr);    // Graph trace 2
+TraceWidget tr1 = TraceWidget(&sprite, &gr);    // Graph trace 1
+TraceWidget tr2 = TraceWidget(&sprite, &gr);    // Graph trace 2
 
 void setup() {
   Serial.begin(115200);
-  delay(5000);
-  tft.begin();
-  tft.setRotation(3);
-  tft.fillScreen(TFT_BLACK);
-
+  lcd.init();
+  lcd.setRotation(1);
+  sprite.createSprite(lcd.width(), lcd.height());
+  sprite.fillScreen(TFT_BLACK);
+  
   // Graph area is 200 pixels wide, 150 high, dark grey background
-  gr.createGraph(200, 150, tft.color565(5, 5, 5));
+  gr.createGraph(200, 150, sprite.color565(5, 5, 5));
 
   // x scale units is from 0 to 100, y scale units is -50 to 50
   gr.setGraphScale(0.0, 100.0, -50.0, 50.0);
@@ -52,23 +53,25 @@ void setup() {
 
   // Get x,y pixel coordinates of any scaled point on graph
   // and ring that point.
-  tft.drawCircle(gr.getPointX(50.0), gr.getPointY(0.0), 5, TFT_MAGENTA);
+  sprite.drawCircle(gr.getPointX(50.0), gr.getPointY(0.0), 5, TFT_MAGENTA);
 
   // Draw the x axis scale
-  tft.setTextDatum(TC_DATUM); // Top centre text datum
-  tft.drawNumber(0, gr.getPointX(0.0), gr.getPointY(-50.0) + 3);
-  tft.drawNumber(50, gr.getPointX(50.0), gr.getPointY(-50.0) + 3);
-  tft.drawNumber(100, gr.getPointX(100.0), gr.getPointY(-50.0) + 3);
+  sprite.setTextDatum(TC_DATUM); // Top centre text datum
+  sprite.drawNumber(0, gr.getPointX(0.0), gr.getPointY(-50.0) + 3);
+  sprite.drawNumber(50, gr.getPointX(50.0), gr.getPointY(-50.0) + 3);
+  sprite.drawNumber(100, gr.getPointX(100.0), gr.getPointY(-50.0) + 3);
 
   // Draw the y axis scale
-  tft.setTextDatum(MR_DATUM); // Middle right text datum
-  tft.drawNumber(-50, gr.getPointX(0.0), gr.getPointY(-50.0));
-  tft.drawNumber(0, gr.getPointX(0.0), gr.getPointY(0.0));
-  tft.drawNumber(50, gr.getPointX(0.0), gr.getPointY(50.0));
+  sprite.setTextDatum(MR_DATUM); // Middle right text datum
+  sprite.drawNumber(-50, gr.getPointX(0.0), gr.getPointY(-50.0));
+  sprite.drawNumber(0, gr.getPointX(0.0), gr.getPointY(0.0));
+  sprite.drawNumber(50, gr.getPointX(0.0), gr.getPointY(50.0));
 
   // Restart traces with new colours
   tr1.startTrace(TFT_WHITE);
   tr2.startTrace(TFT_YELLOW);
+
+  sprite.pushSprite(0, 0);
 }
 
 void loop() {
@@ -101,5 +104,7 @@ void loop() {
       tr1.startTrace(TFT_GREEN);
       tr2.startTrace(TFT_YELLOW);
     }
+
+    sprite.pushSprite(0, 0);
   }
 }
