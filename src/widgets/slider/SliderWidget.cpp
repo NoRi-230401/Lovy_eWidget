@@ -15,7 +15,9 @@ swap_val(T& a, T& b) { T t = a; a = b; b = t; }
 ** Function name:           SliderWidget
 ** Description:             Constructor with pointers to TFT and sprite instances
 ***************************************************************************************/
-SliderWidget::SliderWidget(TFT_eSPI *tft, TFT_eSprite *spr) {
+//SliderWidget::SliderWidget(TFT_eSPI *tft, TFT_eSprite *spr)
+SliderWidget::SliderWidget(LGFX_Sprite *tft, LGFX_Sprite *spr)
+{
   _tft = tft;
   _spr = spr;
 }

@@ -17,18 +17,21 @@
 //Standard support
 #include <Arduino.h>
 
-#include <TFT_eSPI.h>
+// #include <TFT_eSPI.h>
+#include <LovyanGFX.hpp>
 
 //#include <functional>
 //typedef std::function<void(void)> actionCallback;
   typedef void (*actionCallback)(void);
   static void dummyButtonAction(void) { }; // In case user callback is not defined!
 
-class ButtonWidget : public TFT_eSPI {
+class ButtonWidget : public LGFX_Device {
 
  public:
 
-  ButtonWidget(TFT_eSPI *tft);
+  // ButtonWidget(TFT_eSPI *tft);
+  ButtonWidget(LGFX_Sprite *tft);
+
 
   // "Classic" initButton() uses centre & size
   void     initButton(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, char *label, uint8_t textsize);
@@ -65,7 +68,8 @@ class ButtonWidget : public TFT_eSPI {
 
 
  private:
-  TFT_eSPI *_tft;
+  // TFT_eSPI *_tft;
+  LGFX_Sprite *_tft;
   int16_t  _x1, _y1;              // Coordinates of top-left corner of button
   int16_t  _xd, _yd;              // Button text datum offsets (wrt centre of button)
   uint16_t _w, _h;                // Width and height of button

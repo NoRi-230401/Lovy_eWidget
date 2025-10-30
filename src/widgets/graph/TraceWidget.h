@@ -7,12 +7,15 @@
 //Standard support
 #include <Arduino.h>
 
-#include <TFT_eSPI.h>
+// #include <TFT_eSPI.h>
+#include <LovyanGFX.hpp>
 #include "GraphWidget.h"
 
 // Created by Bodmer from widget sketch functions
 
-class TraceWidget : public TFT_eSPI {
+// class TraceWidget : public TFT_eSPI
+class TraceWidget : public LGFX_Device
+{
 
  public:
 

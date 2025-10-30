@@ -7,14 +7,19 @@
 //Standard support
 #include <Arduino.h>
 
-#include <TFT_eSPI.h>
+// #include <TFT_eSPI.h>
 // Created by Bodmer from widget sketch functions
+#include <LovyanGFX.hpp>
 
-class GraphWidget : public TFT_eSPI {
+
+// class GraphWidget : public TFT_eSPI
+class GraphWidget : public LGFX_Device
+{
 
  public:
 
-  GraphWidget(TFT_eSPI *tft);
+  // GraphWidget(TFT_eSPI *tft);
+  GraphWidget(LGFX_Sprite *tft);
 
   bool createGraph(uint16_t graphWidth, uint16_t graphHeight, uint16_t bgColor);
   void setGraphGrid(float xsval, float xinc, float ysval, float yinc, uint16_t gridColor);
@@ -75,7 +80,9 @@ class GraphWidget : public TFT_eSPI {
   const uint16_t BOTTOM = 0x4; // 0100
   const uint16_t TOP =    0x8; // 1000
 
-  TFT_eSPI *_tft;
+  // TFT_eSPI *_tft;
+  LGFX_Sprite *_tft;
+  
 };
 
 #endif

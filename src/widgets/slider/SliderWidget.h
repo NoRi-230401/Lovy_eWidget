@@ -7,9 +7,9 @@
 //Standard support
 #include <Arduino.h>
 
-#include <TFT_eSPI.h>
+// #include <TFT_eSPI.h>
 // Created by Bodmer from widget sketch functions
-
+#include <LovyanGFX.hpp>
 #define H_SLIDER true
 #define V_SLIDER false
 
@@ -37,11 +37,14 @@ typedef struct slider_t {
 } slider_param;
 
 
-class SliderWidget : public TFT_eSPI {
+// class SliderWidget : public TFT_eSPI
+class SliderWidget : public LGFX_Device
+{
 
  public:
 
-  SliderWidget(TFT_eSPI *tft, TFT_eSprite *spr);
+//  SliderWidget(TFT_eSPI *tft, TFT_eSprite *spr);
+  SliderWidget(LGFX_Sprite *tft, LGFX_Sprite *spr);
 
   void drawSlider(uint16_t x, uint16_t y);
   void drawSlider(uint16_t x, uint16_t y, slider_t param);
@@ -101,8 +104,8 @@ class SliderWidget : public TFT_eSPI {
   uint16_t _sxe;
   uint16_t _sye;
 
-  TFT_eSprite *_spr;
-  TFT_eSPI *_tft;
+  LGFX_Sprite *_spr;
+  LGFX_Sprite *_tft;
 };
 
 #endif

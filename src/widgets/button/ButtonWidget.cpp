@@ -4,7 +4,9 @@
 ** Code for the GFX button UI element
 ** Grabbed from Adafruit_tft library and enhanced to handle any label font
 ***************************************************************************************/
-ButtonWidget::ButtonWidget(TFT_eSPI *tft) {
+// ButtonWidget::ButtonWidget(TFT_eSPI *tft)
+ButtonWidget::ButtonWidget(LGFX_Sprite *tft)
+{
   _tft       = tft;
   _xd        = 0;
   _yd        = 0;

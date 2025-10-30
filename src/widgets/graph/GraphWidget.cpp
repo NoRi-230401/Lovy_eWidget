@@ -9,7 +9,8 @@
 ** Function name:           GraphWidget
 ** Description:             Constructor with pointers to TFT and sprite instances
 ***************************************************************************************/
-GraphWidget::GraphWidget(TFT_eSPI *tft)
+// GraphWidget::GraphWidget(TFT_eSPI *tft)
+GraphWidget::GraphWidget(LGFX_Sprite *tft)
 {
   _tft = tft;
 }
