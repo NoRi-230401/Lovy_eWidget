@@ -25,11 +25,12 @@
     },
     {
       "name": "NoRi-230401",
+      "email": "sedia2011-apple@yahoo.co.jp",
       "url": "https://github.com/NoRi-230401"
     }
   ],
-  "license": "BSD-2-Clause",
   "homepage": "https://github.com/NoRi-230401/Lovy_eWidget",
   "frameworks": "arduino",
-  "platforms": "espressif32"
+  "platforms": "*",
+  "headers": "Lovy_eWidget.h"
 }
