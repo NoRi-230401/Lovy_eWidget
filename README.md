@@ -11,7 +11,6 @@ This library is a fork of Bodmer's original TFT_eWidget library, adapted to work
 *   **MeterWidget:** Display values on a classic analogue meter.
 *   **GraphWidget & TraceWidget:** Plot data on a customizable graph with grid and scaling options.
 
-## Credits
 
 ## Basic Usage
 
