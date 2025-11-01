@@ -1,3 +1,8 @@
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
+
+
 // Button widget demo, requires SPI display with touch screen
 
 // Requires widget library here:
@@ -90,13 +95,13 @@ void initButtons()
   btnL.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_WHITE, TFT_RED, TFT_BLACK, "Button", 1);
   btnL.setPressAction(btnL_pressAction);
   btnL.setReleaseAction(btnL_releaseAction);
-  btnL.drawSmoothButton(false, 3, TFT_BLACK); // 3 is outline width, TFT_BLACK is the surrounding background colour for anti-aliasing
+  btnL.drawSmoothButton(false, 3, TFT_BLACK);
 
   y = lcd.height() / 2 + 10;
   btnR.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_WHITE, TFT_BLACK, TFT_GREEN, "OFF", 1);
   btnR.setPressAction(btnR_pressAction);
   btnR.setReleaseAction(btnR_releaseAction);
-  btnR.drawSmoothButton(false, 3, TFT_BLACK); // 3 is outline width, TFT_BLACK is the surrounding background colour for anti-aliasing
+  btnR.drawSmoothButton(false, 3, TFT_BLACK);
 }
 
 void setup()
@@ -107,7 +112,7 @@ void setup()
   sprite.createSprite(lcd.width(), lcd.height());
   
   sprite.fillScreen(TFT_BLACK);
-  sprite.setFreeFont(FF18);
+  sprite.setFont(FF18);
 
   initButtons();
   sprite.pushSprite(0, 0);

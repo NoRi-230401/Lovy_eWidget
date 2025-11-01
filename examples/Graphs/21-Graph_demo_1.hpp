@@ -1,3 +1,8 @@
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
+
+
 // Demonstrate graph widget functions with a single trace instance
 // One trace can be drawn at a time with one trace instance
 
@@ -22,7 +27,7 @@ const float gyHigh = 512.0;
 void setup() {
   Serial.begin(115200);
   lcd.init();
-  lcd.setRotation(3);
+  lcd.setRotation(1);
   sprite.createSprite(lcd.width(), lcd.height());
   sprite.fillScreen(TFT_BLACK);
   

@@ -1,3 +1,7 @@
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
+
 /*
   Example animated analogue meters
 
@@ -50,16 +54,16 @@ void setup(void)
   //            --Red--  -Org-   -Yell-  -Grn-
   amps.setZones(75, 100, 50, 75, 25, 50, 0, 25); // Example here red starts at 75% and ends at 100% of full scale
   // Meter is 239 pixels wide and 126 pixels high
-  amps.analogMeter(0, 0, 2.0, "mA", "0", "0.5", "1.0", "1.5", "2.0"); // Draw analogue meter at 0, 0
+  amps.analogMeter(0, 0, 2.0, "mA", "0", "0.5", "1.0", "1.5", "2.0");
 
   // Colour draw order is red, orange, yellow, green. So red can be full scale with green drawn
   // last on top to indicate a "safe" zone.
   //             -Red-   -Org-  -Yell-  -Grn-
   volts.setZones(0, 100, 25, 75, 0, 0, 40, 60);
-  volts.analogMeter(0, 128, 10.0, "V", "0", "2.5", "5", "7.5", "10"); // Draw analogue meter at 0, 128
+  volts.analogMeter(0, 128, 10.0, "V", "0", "2.5", "5", "7.5", "10");
 
   // No coloured zones if not defined
-  ohms.analogMeter(0, 256, 100, "R", "0", "", "50", "", "100"); // Draw analogue meter at 0, 128
+  ohms.analogMeter(0, 256, 100, "R", "0", "", "50", "", "100");
 
   sprite.pushSprite(0, 0);
 }

@@ -1,3 +1,8 @@
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
+
+
 // Demonstrate graph widget functions with two independant trace instances
 // Multiple traces can be drawn at a time with multiple trace instances
 // Note: Traces are automatically clipped at graph boundaries by widget library
@@ -67,11 +72,12 @@ void setup() {
   sprite.drawNumber(0, gr.getPointX(0.0), gr.getPointY(0.0));
   sprite.drawNumber(50, gr.getPointX(0.0), gr.getPointY(50.0));
 
+  sprite.pushSprite(0, 0);
+  delay(3000);
+
   // Restart traces with new colours
   tr1.startTrace(TFT_WHITE);
   tr2.startTrace(TFT_YELLOW);
-
-  sprite.pushSprite(0, 0);
 }
 
 void loop() {
@@ -102,7 +108,7 @@ void loop() {
       gr.drawGraph(40, 10);
       // Start new trace
       tr1.startTrace(TFT_GREEN);
-      tr2.startTrace(TFT_YELLOW);
+      tr2.startTrace(TFT_ORANGE);
     }
 
     sprite.pushSprite(0, 0);

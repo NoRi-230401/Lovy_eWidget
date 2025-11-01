@@ -1,6 +1,7 @@
-/***************************************************************************************
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
 
-***************************************************************************************/
 #ifndef _TraceWidgetH_
 #define _TraceWidgetH_
 

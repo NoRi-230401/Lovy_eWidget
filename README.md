@@ -135,5 +135,20 @@ if (x_val <= 100) {
 *   **LovyanGFX Migration:** The migration from `TFT_eSPI` to `LovyanGFX` was performed by NoRi-230401 and AndroidCrypto.
 
 ## Repository
-The source code is available on GitHub:
+The source code is available on GitHub: 
 https://github.com/NoRi-230401/Lovy_eWidget
+
+Original TFT_eWidget library by Bodmer on GitHub: https://github.com/Bodmer/TFT_eWidget
+
+
+
+
+Acknowledgements
+----------------
+Thanks to [Bodmer](https://github.com/Bodmer/), author of the [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) and ,[TFT_eWidget](https://github.com/Bodmer/TFT_eWidget) library.  
+
+Thanks to [Lovyan03](https://github.com/lovyan03/) , author or the [LovyanGFX](https://github.com/adafruit/Adafruit-GFX-Library), which is special useful display library.
+
+Thanks to [AndroidCrypto](https://github.com/AndroidCrypto/), first create `Lovy_eWidget` library on [ESP32 Tft_eSPI library to LovyanGFX library transition](https://github.com/AndroidCrypto/ESP32_Tft_eSPI_to_LovyanGFX_transition), for the inspiration to create this library for me.  
+
+

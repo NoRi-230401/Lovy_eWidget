@@ -1,3 +1,7 @@
+// LovyanGFX Migration:   The migration from TFT_eSPI to LovyanGFX was performed 
+//   by NoRi-230401 and AndroidCrypto.
+// The source code is available on GitHub: https://github.com/NoRi-230401/Lovy_eWidget
+
 /***************************************************************************************
 // The following button class has been ported over from the Adafruit_tft library.
 // A slightly different implementation in this ButtonWidget library allows:
@@ -28,10 +32,15 @@ public:
   ButtonWidget(LGFX_Sprite *tft);
 
   // "Classic" initButton() uses centre & size
-  void initButton(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, char *label, uint8_t textsize);
+  // void initButton(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, char *label, uint8_t textsize);
+
+  // // New/alt initButton() uses upper-left corner & size
+  // void initButtonUL(int16_t x1, int16_t y1, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, char *label, uint8_t textsize);
+
+  void initButton(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, const char *label, uint8_t textsize);
 
   // New/alt initButton() uses upper-left corner & size
-  void initButtonUL(int16_t x1, int16_t y1, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, char *label, uint8_t textsize);
+  void initButtonUL(int16_t x1, int16_t y1, uint16_t w, uint16_t h, uint16_t outline, uint16_t fill, uint16_t textcolor, const char *label, uint8_t textsize);
 
   // Adjust text datum and x, y deltas
   void setLabelDatum(int16_t x_delta, int16_t y_delta, uint8_t datum = MC_DATUM);
