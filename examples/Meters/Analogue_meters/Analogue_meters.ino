@@ -20,7 +20,9 @@
 
 // #define LGFX_AUTODETECT
 #include <LovyanGFX.hpp>
+// #include <LGFX_AUTODETECT.hpp>
 #include "LovyanGFX_ILI9341_XPT2046_Config.hpp"
+
 static LGFX lcd;
 static LGFX_Sprite sprite(&lcd);
 

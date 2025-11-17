@@ -6,6 +6,7 @@
 //   + 2.8inch LCD display (ILI9341) .. SPI bus
 //   + touchScreen (XPT2046) .. SPI bus
 // --------------------------------------------------------
+#pragma once
 #define LGFX_USE_V1
 #include <LovyanGFX.hpp>
 
@@ -22,12 +23,12 @@ public:
       auto cfg = _bus_instance.config();
       
       // SPIバスの設定
-      cfg.spi_host = SPI3_HOST; // 変更
+      cfg.spi_host = SPI3_HOST;
       cfg.spi_mode = 0;
       cfg.freq_write = 40000000;
       cfg.freq_read  = 16000000;
-      cfg.spi_3wire = false;
-      //cfg.use_lock   = true; // トランザクションロックを使用する場合はtrueを設定
+      cfg.spi_3wire = true;
+      cfg.use_lock   = true;
       cfg.dma_channel = SPI_DMA_CH_AUTO;
       cfg.pin_sclk = 3;
       cfg.pin_mosi = 45;
@@ -64,15 +65,15 @@ public:
     {
         auto cfg = _touch_instance.config();
 
-        cfg.x_min      =  378;  // 変更
-        cfg.x_max      = 3806;  // 変更
-        cfg.y_min      = 3765;  // 変更
-        cfg.y_max      =  254;  // 変更
-        cfg.pin_int    = -1;    // 変更
+        cfg.x_min      =  356;
+        cfg.x_max      = 3823;
+        cfg.y_min      = 3816;
+        cfg.y_max      =  225;
+        cfg.pin_int    = -1;
         cfg.bus_shared = false;
         cfg.offset_rotation = 0;
 
-        cfg.spi_host = SPI2_HOST; // 変更
+        cfg.spi_host = SPI2_HOST;
         cfg.freq = 1000000;
         cfg.pin_sclk = 42;
         cfg.pin_mosi = 2;
